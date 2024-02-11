@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App - Easy Tutorials</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="card">
+      <div class="search">
+        <input type="text" placeholder="Enter city name" spellcheck="false" />
+        <button><img src="images/search.png" /></button>
+      </div>
+      <div class="weather">
+        <img src="images/rain.png" class="weather-icon" />
+        <h1 class="temp">...</h1>
+        <br />
+        <h2 class="city">...</h2>
+        <br />
+        <div class="details">
+          <div class="col">
+            <img src="images/humidity.png" />
+            <div>
+              <p class="humidity">...</p>
+              <p>Humidity</p>
+            </div>
+          </div>
+          <div class="col">
+            <img src="images/wind.png" />
+            <div>
+              <p class="wind">...</p>
+              <p>Wind Speed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const apiKey = "18e6f3d006cba85955b3d4b39b7d93f9";
+      const apiUrl = "https://api.openweathermap.org/data/2.5/weather";
+      const cityid = 1264733;
+      // let load = false
+      async function checkWeather() {
+        try {
+          // load=true
+          const response = await fetch(
+            apiUrl + `?id=${cityid}&appid=${apiKey}`
+          );
+          const data = await response.json();
+          // if (response.ok && data){
+          //       load=false
+          // }
+          // Convert temperature from Kelvin to Celsius
+          const temperatureInCelsius = Math.round(data.main.temp - 273.15);
+          // Update DOM with converted temperature
+          // if (load )
+          //       {
+          // document.querySelector(".temp").innerHTML = "..."
+          // document.querySelector(".city").innerHTML = "..."
+          // document.querySelector(".humidity").innerHTML = "..."
+          // document.querySelector(".wind").innerHTML = "..."
+          //       }
+          // else{
+          document.querySelector(
+            ".temp"
+          ).innerHTML = `${temperatureInCelsius}°C`;
+          document.querySelector(".city").innerHTML = data.name;
+          document.querySelector(".humidity").innerHTML =
+            data.main.humidity + "%";
+          document.querySelector(".wind").innerHTML =
+            data.wind.speed + " km/hr";
+          // }
+        } catch (error) {
+          console.log(error);
+        } finally {
+          load = false;
+        }
+      }
+      checkWeather();
+    </script>
+  </body>
+</html>
