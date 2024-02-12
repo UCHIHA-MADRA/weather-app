@@ -9,10 +9,10 @@
 <body>
 <div class="card">
     <!-- Search box and button -->
-    <div class="search">
+    <form class="search">
         <input type="text" id="cityInput" placeholder="Enter city name" spellcheck="false" />
-        <button id="searchBtn"><img src="images/search.png" /></button>
-    </div>
+        <button type="submit" id="searchBtn"><img src="images/search.png" /></button>
+    </form>
     <!-- Error message display -->
     <div class="error" style="display: none;">
         <p>Invalid City Name</p>
@@ -44,6 +44,12 @@
 </div>
 
 <script>
+    const form = document.querySelector(".search")
+
+    form.addEventListener("submit", (e) => {
+        e.preventDefault()
+        getWeather()
+    })
 // Function to fetch weather data
 async function getWeather() {
     const city = document.getElementById('cityInput').value.trim();
@@ -51,6 +57,7 @@ async function getWeather() {
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     
     try {
+        if (city) {
         const response = await fetch(apiUrl);
         if (!response.ok) {
             throw new Error('City not found');
@@ -60,6 +67,7 @@ async function getWeather() {
         displayWeather(data);
         // Hide error message if previously displayed
         document.querySelector('.error').style.display = 'none';
+    }
     } catch (error) {
         // Display error message if city not found
         document.querySelector('.error').innerText = error.message;
