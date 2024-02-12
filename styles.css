@@ -13,84 +13,120 @@ body {
 
 /* Styling for the main card container */
 .card {
-  width: 90%; /* Setting the width of the card */
-  max-width: 470px; /* Setting the maximum width of the card */
-  background: linear-gradient(135deg, #82b0a4, #a9a3d0); /* Applying a linear gradient background */
-  color: #f9f5f5; /* Setting text color */
-  margin: 100px auto 0; /* Centering the card vertically and horizontally */
-  border-radius: 20px; /* Adding border radius for rounded corners */
-  padding: 40px 35px; /* Setting padding inside the card */
-  text-align: center; /* Aligning text to the center */
+  width: 90%;
+  max-width: 470px;
+  background: linear-gradient(135deg, #82b0a4, #a9a3d0);
+  color: #f9f5f5;
+  margin: 100px auto 0;
+  border-radius: 20px;
+  padding: 40px 35px;
+  text-align: center;
 }
 
 /* Styling for the search input and button */
 .search {
-  width: 100%; /* Setting the width of the search container */
-  display: flex; /* Displaying the search container as a flexbox */
-  align-items: center; /* Aligning items vertically in the center */
-  border-radius: 2px; /* Adding border radius */
-  justify-content: space-between; /* Distributing space between elements */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 2px;
+  justify-content: space-between;
 }
 
 .search input {
-  border: 0; /* Removing border */
-  outline: 0; /* Removing outline */
-  background: #f2f6f5; /* Setting background color */
-  color: #524bba; /* Setting text color */
-  padding: 10px 25px; /* Setting padding */
-  height: 60px; /* Setting height of the input */
-  border-radius: 30px; /* Adding border radius for rounded corners */
-  flex: 1; /* Allowing input to grow and shrink based on available space */
-  margin-right: 16px; /* Adding margin to the right */
-  font-size: 18px; /* Setting font size */
+  border: 0;
+  outline: 0;
+  background: #f2f6f5;
+  color: #524bba;
+  padding: 10px 25px;
+  height: 60px;
+  border-radius: 30px;
+  flex: 1;
+  margin-right: 16px;
+  font-size: 18px;
 }
 
 .search button {
-  border: 0; /* Removing border */
-  outline: 0; /* Removing outline */
-  background: #c8fcf4; /* Setting background color */
-  color: #524bba; /* Setting text color */
-  padding: 15px 25px; /* Setting padding */
-  border-radius: 10%; /* Adding border radius for rounded corners */
-  font-size: 18px; /* Setting font size */
+  border: 0;
+  outline: 0;
+  background: #c8fcf4;
+  color: #524bba;
+  padding: 15px 25px;
+  border-radius: 10%;
+  font-size: 18px;
 }
 
 /* Styling for weather information display */
 .weather {
-  display: none; /* Hiding weather information by default */
+  display: none;
 }
 
 /* Styling for error message display */
 .error {
-  text-align: left; /* Aligning text to the left */
-  margin-left: 10px; /* Adding margin to the left */
-  font-size: 14px; /* Setting font size */
-  margin-top: 10px; /* Adding margin to the top */
-  display: none; /* Hiding error message by default */
+  text-align: left;
+  margin-left: 10px;
+  font-size: 14px;
+  margin-top: 10px;
+  display: none;
 }
 
 /* Styling for weather details */
 .details {
-  display: flex; /* Displaying details as a flexbox */
-  align-items: center; /* Aligning items vertically in the center */
-  justify-content: space-between; /* Distributing space between elements */
-  padding: 0 20px; /* Adding padding */
-  margin-top: 50px; /* Adding margin to the top */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  margin-top: 50px;
 }
 
 /* Styling for individual columns in weather details */
 .col {
-  display: flex; /* Displaying columns as a flexbox */
-  align-items: center; /* Aligning items vertically in the center */
-  text-align: left; /* Aligning text to the left */
+  display: flex;
+  align-items: center;
+  text-align: left;
 }
 
 .col img {
-  width: 40px; /* Setting width of the images */
-  margin-right: 10px; /* Adding margin to the right */
+  width: 40px;
+  margin-right: 10px;
 }
 
 .col p {
-  margin: 0; /* Removing default margin */
-  padding: 0; /* Removing default padding */
+  margin: 0;
+  padding: 0;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+  .card {
+    width: 80%; /* Adjusting card width for smaller screens */
+    padding: 30px; /* Adjusting padding for smaller screens */
+  }
+
+  .search {
+    flex-direction: column; /* Changing flex direction to column for smaller screens */
+    align-items: stretch; /* Stretching items to full width */
+  }
+
+  .search input {
+    width: 100%; /* Making input full width */
+    margin-bottom: 10px; /* Adding margin between input and button */
+  }
+
+  .search button {
+    width: 100%; /* Making button full width */
+  }
+
+  .details {
+    flex-direction: column; /* Changing flex direction to column for smaller screens */
+    margin-top: 30px; /* Adjusting margin for smaller screens */
+  }
+
+  .col {
+    width: 100%; /* Making columns full width for smaller screens */
+    margin-bottom: 20px; /* Adjusting margin between columns for smaller screens */
+  }
+
+  .col img {
+    width: 30px; /* Adjusting image width for smaller screens */
+  }
 }
