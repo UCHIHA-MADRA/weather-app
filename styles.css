@@ -128,4 +128,13 @@ body {
     margin-right: 5px; /* Add margin between images 
   }*/
   /**/
-  
+  .weather{
+    display: none;
+  }
+  .error{
+    text-align: left;
+    margin-left: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+    display: none;
+  }
