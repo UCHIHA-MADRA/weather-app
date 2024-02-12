@@ -1,3 +1,4 @@
+/* Resetting default styles and setting global styles */
 * {
   margin: 0;
   padding: 0;
@@ -5,136 +6,91 @@
   box-sizing: border-box;
 }
 
+/* Setting background color for the body */
 body {
   background-color: #000000;
 }
 
+/* Styling for the main card container */
 .card {
-  width: 90%;
-  max-width: 470px;
-  background: linear-gradient(135deg, #82b0a4, #a9a3d0);
-  color: #f9f5f5;
-  margin: 100px auto 0;
-  border-radius: 20px;
-  padding: 40px 35px;
-  text-align: center;
+  width: 90%; /* Setting the width of the card */
+  max-width: 470px; /* Setting the maximum width of the card */
+  background: linear-gradient(135deg, #82b0a4, #a9a3d0); /* Applying a linear gradient background */
+  color: #f9f5f5; /* Setting text color */
+  margin: 100px auto 0; /* Centering the card vertically and horizontally */
+  border-radius: 20px; /* Adding border radius for rounded corners */
+  padding: 40px 35px; /* Setting padding inside the card */
+  text-align: center; /* Aligning text to the center */
 }
 
+/* Styling for the search input and button */
 .search {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  border-radius: 2px;
-  justify-content: space-between;
+  width: 100%; /* Setting the width of the search container */
+  display: flex; /* Displaying the search container as a flexbox */
+  align-items: center; /* Aligning items vertically in the center */
+  border-radius: 2px; /* Adding border radius */
+  justify-content: space-between; /* Distributing space between elements */
 }
 
 .search input {
-  border: 0;
-  outline: 0;
-  background: #f2f6f5; /* Move the background color to the input element */
-  color: #524bba;
-  padding: 10px 25px;
-  height: 60px;
-  border-radius: 30px; /* Make the search input cylindrical */
-  flex: 1;
-  margin-right: 16px;
-  font-size: 18px;
-}
-.weather-icon {
-  width: 170px;
-  margin-top: 30px;
-}
-.weather h1 {
-  font-size: 80px;
-  font-weight: 500;
-}
-.weather h2 {
-  font-size: 45px;
-  font-weight: 400;
-  margin-top: -10px;
+  border: 0; /* Removing border */
+  outline: 0; /* Removing outline */
+  background: #f2f6f5; /* Setting background color */
+  color: #524bba; /* Setting text color */
+  padding: 10px 25px; /* Setting padding */
+  height: 60px; /* Setting height of the input */
+  border-radius: 30px; /* Adding border radius for rounded corners */
+  flex: 1; /* Allowing input to grow and shrink based on available space */
+  margin-right: 16px; /* Adding margin to the right */
+  font-size: 18px; /* Setting font size */
 }
 
 .search button {
-  border: 0;
-  outline: 0;
-  background: #c8fcf4;
-  color: #524bba;
-  padding: 15px 25px;
-  border-radius: 10%; /* Make the search button circular */
-  font-size: 18px;
+  border: 0; /* Removing border */
+  outline: 0; /* Removing outline */
+  background: #c8fcf4; /* Setting background color */
+  color: #524bba; /* Setting text color */
+  padding: 15px 25px; /* Setting padding */
+  border-radius: 10%; /* Adding border radius for rounded corners */
+  font-size: 18px; /* Setting font size */
 }
 
+/* Styling for weather information display */
+.weather {
+  display: none; /* Hiding weather information by default */
+}
+
+/* Styling for error message display */
+.error {
+  text-align: left; /* Aligning text to the left */
+  margin-left: 10px; /* Adding margin to the left */
+  font-size: 14px; /* Setting font size */
+  margin-top: 10px; /* Adding margin to the top */
+  display: none; /* Hiding error message by default */
+}
+
+/* Styling for weather details */
 .details {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
-  margin-top: 50px;
+  display: flex; /* Displaying details as a flexbox */
+  align-items: center; /* Aligning items vertically in the center */
+  justify-content: space-between; /* Distributing space between elements */
+  padding: 0 20px; /* Adding padding */
+  margin-top: 50px; /* Adding margin to the top */
 }
-/* .col {
-  display: flex;
-  align-items: center;
-  text-align: left;
-  margin-left: 10%;
-  margin-right: 10%;
-} */
 
+/* Styling for individual columns in weather details */
 .col {
-    display: flex;
-    align-items: center;
-    text-align: left;
+  display: flex; /* Displaying columns as a flexbox */
+  align-items: center; /* Aligning items vertically in the center */
+  text-align: left; /* Aligning text to the left */
 }
 
-/* .col img {
-  margin-right: 5px;
-} */
-
-.col img{
-    width: 40px;
-    margin-right: 10px;
+.col img {
+  width: 40px; /* Setting width of the images */
+  margin-right: 10px; /* Adding margin to the right */
 }
-
-.humidity,
-.wind {
-    font-size: 28px;
-    margin-top: -6px;
-}
-/* 
-.humidity,
-.wind {
-  margin-right: 20px; /* Add margin between humidity and wind elements */
-/**/
-/* 
- margin: 10px;}
-  */
 
 .col p {
-  margin: 0;
-  padding: 0; /* Remove default margin */
+  margin: 0; /* Removing default margin */
+  padding: 0; /* Removing default padding */
 }
-
-
-/* .col {
-    display: flex;
-    align-items: center;
-    text-align: left;
-    margin-left: 10%;
-    margin-right: 10%;
-    display: inline; /* Display wind speed inline 
-}*/
-  /**/
-  /*
-  .col img {
-    margin-right: 5px; /* Add margin between images 
-  }*/
-  /**/
-  .weather{
-    display: none;
-  }
-  .error{
-    text-align: left;
-    margin-left: 10px;
-    font-size: 14px;
-    margin-top: 10px;
-    display: none;
-  }
